@@ -2,9 +2,25 @@
 // AKA Anonymous Self-Executing Function
 (function()
 {
+    function DisplayAboutPage()
+    {
+        console.log("About Page");
+    }
+
+    function DisplayProductPage()
+    {
+        console.log("Products Page");
+    }
+
+    function DisplayServicesPage()
+    {
+        console.log("Services");
+    }
 
     function DisplayHomePage()
     {
+        console.log("Homepage");
+
         let AboutUsButton = document.getElementById("AboutUsButton");
         console.log(AboutUsButton);
         AboutUsButton.addEventListener("click", function()
@@ -66,6 +82,70 @@
         // Insert Before Example
     }
 
+    function DisplayContactPage()
+    {
+        console.log("Contact Page");
+
+        let sendButton = document.getElementById("sendButton");
+        let subscribeCheckbox = document.getElementById("subscribeCheckbox");
+
+        //Local Storage Stuff
+        //localStorage.setItem("1", "Adonai");
+        //console.log(localStorage.getItem("1"));
+        //localStorage.removeItem("1");
+
+        sendButton.addEventListener("click", function(event)
+        {
+            //event.preventDefault(); // For Debugging
+            if(subscribeCheckbox.checked)
+            {
+                let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
+                if(contact.serialize())
+                {
+                    let key = contact.FullName.substring(0,1) + Date.now();
+
+                    localStorage.setItem(key, contact.serialize());
+                }
+            }
+        });
+    }
+
+    function DisplayContactListPage()
+    {
+        console.log("Contact List Page");
+
+        if(localStorage.length > 0) // Make sure not empty
+        {
+            let contactList = document.getElementById("contactList");
+            let data = "";
+            let keys = Object.keys(localStorage);
+            let index = 1;
+
+            // For each key in keys collection, loop
+            for(const key of keys)
+            {
+                // Retrieve contact data from local storage
+                let contactData = localStorage.getItem(key);
+
+                // Create an empty contact object
+                let contact = new Contact();
+                contact.deserialize(contactData);
+
+                data += `<tr>
+                <th scope ="row" class="text-center">${index}</th>
+                <td>${contact.FullName}</td>
+                <td>${contact.ContactNumber}</td>
+                <td>${contact.EmailAddress}</td>
+                <td></td>
+                <td></td>
+                </tr>
+                `;
+                index++;
+            }
+            contactList.innerHTML = data;
+        }
+    }
+
     // Named Function
     function Start()
     {
@@ -75,6 +155,26 @@
         {
             case "Home":
                 DisplayHomePage();
+                break;
+
+            case "Contact":
+                DisplayContactPage();
+                break;
+
+            case "Contact-List":
+                DisplayContactListPage();
+                break;
+
+            case "About":
+                DisplayAboutPage();
+                break;
+            
+            case "Product":
+                DisplayProductPage();
+                break;
+
+            case "Services":
+                DisplayServicesPage();
                 break;
         }     
     }
