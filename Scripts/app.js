@@ -10,10 +10,10 @@
         console.log("About Page");
 
         //document.body.style.background = "url('./Images/AdobeStock_346156119.png')";
-        document.body.style.backgroundColor = "red";
+        //document.body.style.backgroundColor = "red";
 
         // Entry point
-        let MainContent = document.getElementsByTagName("main")[0];       
+        let MainContent = document.getElementsByTagName("main")[0];    
         
         // About Us h1 header
         let AboutHeader = document.createElement("h1");
@@ -50,42 +50,63 @@
         document.getElementById("H2").style.wordSpacing = "670px";
         document.getElementById("H2").style.textIndent = "100px";
 
-        /* Adonai Profile Pic
-        let AdonaiProfile = document.createElement("IMG");
-        AdonaiProfile.setAttribute("src","./Images/Adonai-Profile.jpg");
-        AdonaiProfile.setAttribute("width", "200");
-        AdonaiProfile.setAttribute("height", "200");
-        AdonaiProfile.setAttribute("alt", "Adonai");
-        MainContent.appendChild(AdonaiProfile);
-        */
-
         // Adonai p About paragraph
         let MainParagraph = document.createElement("p");
         MainParagraph.setAttribute("id", "MainParagraph");
         MainParagraph.setAttribute("class", "AdonaiParagraph");
-        //MainParagraph.setAttribute("class", "mr-50px");
-        let AboutAdonai = "I am 24 years old. I am Computer Programmer at Durham College.\n";
+        let AboutAdonai = "I am 24 years old. I am Computer Programmer at Durham College.";
         let SecondParagraphString = `${AboutAdonai}
          I like baking Strawberry Rhubarb Pies in the summer and apple pie in the fall!`;
         MainParagraph.textContent = SecondParagraphString;
         MainContent.appendChild(MainParagraph);
         let AdonaiP = document.getElementById("second");
         AdonaiP.before(MainParagraph);
+
+        // Adonai Resume Link
+        let resume = document.createElement("p");
+        resume.setAttribute("id", "AdonaiResume");
+        resume.setAttribute("class", "AdonaiResume");
+        let AdonaiLink = "https://www.linkedin.com/in/adonai-fordw/";
+        resume.innerHTML = '<a href = "'+ AdonaiLink +'">Adonai Resume';
+        MainContent.appendChild(resume);
+        let AdonaiR = document.getElementById("second");
+        AdonaiR.before(resume);
+
+        // Add Human Resources to Navbar
+        AddHr();
+
+        // Add Bottom NavBar
+        AddNavBar();
+
     }
 
     function DisplayProductPage()
     {
         console.log("Products Page");
+
+        // Add Human Resources to Navbar
+        AddHr();
+
+        // Add Bottom NavBar
+        AddNavBar();
     }
 
     function DisplayServicesPage()
     {
         console.log("Services");
+
+        // Add Human Resources to Navbar
+        AddHr();
+
+        // Add Bottom NavBar
+        AddNavBar();
     }
     function DisplayHomePage()
     {
         document.body.style.backgroundColor = "blue";
         //SetBackgroundImage();
+        AddHr();
+        // Add Bottom NavBar
         AddNavBar();
         let AboutUsButton = document.getElementById("AboutUsButton");
         console.log(AboutUsButton);
@@ -122,43 +143,20 @@
         Article.innerHTML = ArticleParagraph;
         DocumentBody.appendChild(Article);
 
-
-        // Deletion example
-        //document.getElementById("ArticleParagraph").remove();
-
-        // Insert Before example
-        // let NewH1 = document.createElement("h1");
-        // NewH1.setAttribute("class", "display-1");
-        // NewH1.textContent = "Hello, World!";
-        // MainContent.before(NewH1);
-
         // Step 4 add/Insert new element
         MainContent.appendChild(MainParagraph);
         Article.innerHTML = ArticleParagraph;
-        DocumentBody.appendChild(Article);
-
-        /*
-        DocumentBody.innerHTML = `
-        <main>
-            <h1 class="container">Hello, World!</h1>
-            <p>This is dynamically created!</p>
-        </main>
-        `; */
-
-        // Insert Before Example
+        DocumentBody.appendChild(Article);   
     }
 
     function DisplayContactPage()
     {
         console.log("Contact Page");
+        // Add Human Resources to Navbar
+        AddNavBar();
 
         let sendButton = document.getElementById("sendButton");
         let subscribeCheckbox = document.getElementById("subscribeCheckbox");
-
-        //Local Storage Stuff
-        //localStorage.setItem("1", "Adonai");
-        //console.log(localStorage.getItem("1"));
-        //localStorage.removeItem("1");
 
         sendButton.addEventListener("click", function(event)
         {
@@ -179,6 +177,12 @@
     function DisplayContactListPage()
     {
         console.log("Contact List Page");
+
+        // Add Human Resources to Navbar
+        AddHr();
+
+        // Add Bottom NavBar
+        AddNavBar();
 
         if(localStorage.length > 0) // Make sure not empty
         {
@@ -222,15 +226,27 @@
         document.body.style.background = "url('./Images/background.jpg')";
     }
 
+    function AddHr()
+    {
+        // Entry point
+        let MainContent = document.getElementsByTagName("main")[0];
+        let HumanResources = document.createElement("li");
+        HumanResources.setAttribute("class", "nav-item");
+        HumanResources.innerHTML = '<a class="nav-link" href = "human-resources.html"><i class="fas fa-life-ring"></i> Human Resources';
+        MainContent.appendChild(HumanResources);
+        let HrLink = document.getElementById("contact-us");
+        HrLink.before(HumanResources);
+    }
+
     function AddNavBar()
     {
-        let HR = document.createElement("li");
-        let Resources = document.createElement("a");
-        HR.setAttribute("class", "nav-item");
-        Resources.setAttribute("class", "nav-link");
-        HR.appendChild(Resources);
-        //HR.innerHTML = "<a class='nav-link' href='HumanResources.html'> Human Resources</a>";
-
+        // Entry point
+        let MainContent = document.getElementsByTagName("main")[0];
+        let navBar = document.createElement("nav");
+        navBar.setAttribute("class", "navbar fixed-bottom navbar-light bg-light");
+        let footer = '<div class="container-fluid"><a class="navbar-brand" href="#">&#169;Copyright 2022</a></div>';
+        navBar.innerHTML = footer;
+        MainContent.appendChild(navBar);
     }
 
     // Named Function
