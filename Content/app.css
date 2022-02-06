@@ -1,3 +1,7 @@
+.main-content{
+    margin-bottom: 65px;
+}
+
 
 img{
     height: 400px;
@@ -41,4 +45,13 @@ img{
     margin-right: auto;
     padding-bottom: 50px;
     width: 50%;
+}
+
+.BG_Homepage{
+    background-image: url("/Images/sunset.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }

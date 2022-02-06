@@ -40,8 +40,6 @@
         // Name h2 Header
         let H2 = document.createElement("h2");
         H2.setAttribute("id", "H2");
-        //H2.setAttribute("class", "mt-5");
-        //H2.setAttribute("style", "Width: 100px");
         let nameHeader = "Adonai  Alexis";
         H2.textContent = nameHeader;
         MainContent.appendChild(H2);
@@ -82,7 +80,9 @@
 
     function DisplayProductPage()
     {
-        console.log("Products Page");
+        console.log("Projects Page");
+        // Entry point
+        let MainContent = document.getElementsByTagName("main")[0];   
 
         // Add Human Resources to Navbar
         AddHr();
@@ -94,6 +94,37 @@
     function DisplayServicesPage()
     {
         console.log("Services");
+        // Entry point
+        let MainContent = document.getElementsByTagName("main")[0];   
+
+        // Name h2 Header
+        let H2 = document.createElement("h2");
+        H2.setAttribute("id", "H2");
+        let nameHeader = "Our Services";
+        H2.textContent = nameHeader;
+        MainContent.appendChild(H2);
+
+        let AdService = document.createElement("h3");
+        AdService.setAttribute("id", "AdService");
+        let AdParagraph = "Adonai's Top 3 Skills are: ";
+        AdService.textContent = AdParagraph;
+        MainContent.appendChild(AdService);
+
+        let AdList = document.createElement("ol");
+        AdList.setAttribute("id", "AdList");
+        AdList.innerHTML = '<li>Object-Oriented Programming</li>'
+            +'<li>UX Design</li><li>Full Stack Development</li>';
+        MainContent.appendChild(AdList);
+
+        let ImageDescriptions = document.createElement("p");
+        ImageDescriptions.setAttribute("id", "ImageDescriptions");
+        let description1 = "Designed User Experience Flowchart";
+        ImageDescriptions.textContent = description1;
+        MainContent.appendChild(ImageDescriptions);
+
+        let ServiceContent = document.getElementById("row1");
+        AdService.after(ServiceContent);        
+        AdList.after(ServiceContent);
 
         // Add Human Resources to Navbar
         AddHr();
@@ -103,11 +134,12 @@
     }
     function DisplayHomePage()
     {
-        document.body.style.backgroundColor = "blue";
-        //SetBackgroundImage();
+        // Add Human Resources to Navbar
         AddHr();
         // Add Bottom NavBar
         AddNavBar();
+
+        // About Us button redirect
         let AboutUsButton = document.getElementById("AboutUsButton");
         console.log(AboutUsButton);
         AboutUsButton.addEventListener("click", function()
@@ -116,37 +148,28 @@
             location.href = "about.html";
         });
 
-        // Step 1 get reference to an entry points(insertion/deletion point)
+        // Entry Point
         let MainContent = document.getElementsByTagName("main")[0];
-        let DocumentBody = document.body;
-        
-        // Step 2 create an element to insert
-        let MainParagraph = document.createElement("p");
-        let Article = document.createElement("article");
-        let ArticleParagraph = `<p id ="ArticleParagraph" class="mt-3">This is the Article Paragraph</p>`;
 
-        // Step 3 configure new element
+        // Header with Homepage Title
+        let HomeHeader = document.createElement("h1");
+        HomeHeader.setAttribute("id", "HomeHeader");
+        let ATitle = "Adonai & Alex's Homepage";
+        HomeHeader.textContent = ATitle;
+        MainContent.appendChild(HomeHeader);
+        let Home = document.getElementById("home");
+        Home.before(HomeHeader);
+        document.getElementById("HomeHeader").style.textIndent = "275px";
+        
+        // Homepage Main Paragraph
+        let MainParagraph = document.createElement("p");
         MainParagraph.setAttribute("id", "MainParagraph");
         MainParagraph.setAttribute("class", "mt-3");
-        MainParagraph.textContent = "";
-        Article.setAttribute("class", "container");
-
-        let FirstParagraphString = "Welcome to Our Homepage! Ice Cream is the best!";
-        // example of Template String
-        let SecondParagraphString = `${FirstParagraphString} `;
-
+        let FirstParagraphString = "Welcome to Our Homepage! Here you will learn more ";
+        let SecondParagraphString = `${FirstParagraphString} about Adonai & Alex!`;
         MainParagraph.textContent = SecondParagraphString;
-        Article.setAttribute("class", "container");
-
-        // Step 4 add / insert new element
         MainContent.appendChild(MainParagraph);
-        Article.innerHTML = ArticleParagraph;
-        DocumentBody.appendChild(Article);
-
-        // Step 4 add/Insert new element
-        MainContent.appendChild(MainParagraph);
-        Article.innerHTML = ArticleParagraph;
-        DocumentBody.appendChild(Article);   
+        Home.before(MainParagraph);
     }
 
     function DisplayContactPage()
@@ -216,16 +239,13 @@
         }
     }
 
+    // Change Products to Projects
     function ChangeProductLabel()
     {
         document.getElementById("projects").innerHTML = "<i class='fas fa-box'></i> Projects";                
     }
 
-    function SetBackgroundImage()
-    {
-        document.body.style.background = "url('./Images/background.jpg')";
-    }
-
+    // Add Human Resources link to top nav bar
     function AddHr()
     {
         // Entry point
@@ -238,6 +258,7 @@
         HrLink.before(HumanResources);
     }
 
+    // Add Fixed Bottom Nav Bar
     function AddNavBar()
     {
         // Entry point
