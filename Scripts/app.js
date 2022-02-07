@@ -1,3 +1,9 @@
+/**
+ * Lab 1
+ * Adonai Ford-Williams 100384369, Alexis Morales 100770880
+ * February 6th, 2022
+ * Durham College
+ */
 // IIFE -- Immediately Invoked Function Expression
 // AKA Anonymous Self-Executing Function
 (function()
@@ -8,9 +14,6 @@
     {
         // Determine where we are
         console.log("About Page");
-
-        //document.body.style.background = "url('./Images/AdobeStock_346156119.png')";
-        //document.body.style.backgroundColor = "red";
 
         // Entry point
         let MainContent = document.getElementsByTagName("main")[0];    
@@ -281,7 +284,7 @@
                 {
                     let key = contact.FullName.substring(0,1) + Date.now();
                     localStorage.setItem(key, contact.serialize());
-                    let homeRedirect = setTimeout(redirects, 1000);
+                    setTimeout(window.location.href = "index.html", 1000);
                 }
             }
         });
