@@ -1,9 +1,9 @@
 {
-  "name": "Lab-1",
+  "name": "ICE-4",
   "version": "1.0.0",
-  "description": "Repo WED6201 W2022 ICE2",
+  "description": "Repo WED6201 W2022 ICE4",
   "main": "index.js",
-  "author": "Adonai Ford-Williams , Alexis",
+  "author": "Adonai Ford-Williams",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

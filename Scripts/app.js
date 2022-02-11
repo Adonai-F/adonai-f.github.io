@@ -1,290 +1,108 @@
-/**
- * Lab 1
- * Adonai Ford-Williams 100384369, Alexis Morales 100770880
- * February 6th, 2022
- * Durham College
- */
 // IIFE -- Immediately Invoked Function Expression
 // AKA Anonymous Self-Executing Function
 (function()
 {
-    ChangeProductLabel();
-
     function DisplayAboutPage()
     {
-        // Determine where we are
         console.log("About Page");
-
-        // Entry point
-        let MainContent = document.getElementsByTagName("main")[0];    
-        
-        // About Us h1 header
-        let AboutHeader = document.createElement("h1");
-        AboutHeader.setAttribute("id", "H1" );
-        AboutHeader.setAttribute("class", "mx-auto");
-        AboutHeader.setAttribute("style", "Width: 200px");
-        let aboutHeader = "About Us";
-        AboutHeader.textContent = aboutHeader;
-        MainContent.appendChild(AboutHeader);
-        let head = document.getElementById("first");
-        head.before(AboutHeader);
-
-        // Details h2 header
-        let H1 = document.createElement("h2");
-        H1.setAttribute("id", "H1" );
-        H1.setAttribute("class", "mx-auto");
-        H1.setAttribute("style", "Width: 300px");
-        let detailHeader = "Here are our Details:";
-        H1.textContent = detailHeader;
-        MainContent.appendChild(H1);
-        let head1 = document.getElementById("first");
-        head1.before(H1);
-
-        // Name h2 Header
-        let H2 = document.createElement("h2");
-        H2.setAttribute("id", "H2");
-        let nameHeader = "Adonai  Alexis";
-        H2.textContent = nameHeader;
-        MainContent.appendChild(H2);
-        let head2 = document.getElementById("first");
-        head2.before(H2);
-        document.getElementById("H2").style.wordSpacing = "670px";
-        document.getElementById("H2").style.textIndent = "100px";
-
-        // Adonai p About paragraph
-        let MainParagraph = document.createElement("p");
-        MainParagraph.setAttribute("id", "MainParagraph");
-        MainParagraph.setAttribute("class", "AdonaiParagraph");
-        let AboutAdonai = "I am 24 years old. I am Computer Programmer at Durham College.";
-        let SecondParagraphString = `${AboutAdonai}
-         I like baking Strawberry Rhubarb Pies in the summer and apple pie in the fall!`;
-        MainParagraph.textContent = SecondParagraphString;
-        MainContent.appendChild(MainParagraph);
-        let AdonaiP = document.getElementById("second");
-        AdonaiP.before(MainParagraph);
-
-        // Alexis p About paragraph
-        let MainParagraph2 = document.createElement("p");
-        MainParagraph2.setAttribute("id", "MainParagraph2");
-        MainParagraph2.setAttribute("class", "AlexParagraph");
-        let AboutAlexis = "Hi Im Alexis Morales, Im a CPGM student at Durham College."; 
-        let FourthParagraphString = `${AboutAlexis}
-        I love to program with the coding languages: C++, Java, Python;`
-        MainParagraph2.textContent = FourthParagraphString;
-        MainContent.appendChild(MainParagraph2);
-        let AboutAlex = document.getElementById("second");
-        AboutAlex.before(MainParagraph2);
-
-        // Adonai Resume Link
-        let resume = document.createElement("p");
-        resume.setAttribute("id", "AdonaiResume");
-        resume.setAttribute("class", "AdonaiResume");
-        let AdonaiLink = "https://www.linkedin.com/in/adonai-fordw/";
-        resume.innerHTML = '<a href = "'+ AdonaiLink +'">Adonai Resume';
-        MainContent.appendChild(resume);
-        let AdonaiR = document.getElementById("second");
-        AdonaiR.before(resume);
-
-        // Alex Resume Link
-        let alexresume = document.createElement("p");
-        alexresume.setAttribute("id", "AlexResume");
-        alexresume.setAttribute("class", "AlexResume");
-        let AlexLink = "https://www.linkedin.com/in/alexis-morales-a31261221/";
-        alexresume.innerHTML = '<a href = "'+ AlexLink + '">Alexis Resume';
-        MainContent.append(alexresume);
-        let AlexisM = document.getElementById("second");
-        AlexisM.before(alexresume);
-
-        // Add Human Resources to Navbar
-        AddHr();
-
-        // Add Bottom NavBar
-        AddNavBar();
-
     }
 
     function DisplayProductPage()
     {
-        console.log("Projects Page");
-        // Entry point
-        let MainContent = document.getElementsByTagName("main")[0];  
-
-        // Favourite Projects
-        let ProjectsH3 = document.createElement("h3");
-        ProjectsH3.setAttribute("id", "ProjectsH3");
-        let AdParagraph = "Adonai & Alex's Favourite Projects: ";
-        ProjectsH3.textContent = AdParagraph;
-        MainContent.appendChild(ProjectsH3);
-        let ProjectsH = document.getElementById("row2");
-        ProjectsH.before(ProjectsH3);
-
-
-        // Favourite Projects Descriptions
-        let ProjectParagraph1 = document.createElement("p");
-        ProjectParagraph1.setAttribute("id", "ProjectParagraph1");
-        ProjectParagraph1.innerHTML = "We Made A Tic Tac Toe Game in First Year!";
-        MainContent.appendChild(ProjectParagraph1);
-
-        // Description 2
-        let ProjectParagraph2 = document.createElement("p");
-        ProjectParagraph2.setAttribute("id", "ProjectParagraph2");
-        ProjectParagraph2.innerHTML = "Every new language begins at Hello World!";
-        MainContent.appendChild(ProjectParagraph2);
-
-        // Description 3
-        let ProjectParagraph3 = document.createElement("p");
-        ProjectParagraph3.setAttribute("id", "ProjectParagraph3");
-        ProjectParagraph3.innerHTML = "We created a program that can make a virtual car using OOP Principles!";
-        MainContent.appendChild(ProjectParagraph3);
-
-        // Insert Descriptions
-        let img1 = document.getElementById("img1");
-        img1.before(ProjectParagraph1);
-
-        let img2 = document.getElementById("img2");
-        img2.before(ProjectParagraph2);
-
-        let img3 = document.getElementById("img3");
-        img3.before(ProjectParagraph3);
-
-        // Add Human Resources to Navbar
-        AddHr();
-
-        // Add Bottom NavBar
-        AddNavBar();
+        console.log("Products Page");
     }
 
     function DisplayServicesPage()
     {
         console.log("Services");
-        // Entry point
-        let MainContent = document.getElementsByTagName("main")[0];   
-
-        // Name h2 Header
-        let H2 = document.createElement("h2");
-        H2.setAttribute("id", "H2");
-        let nameHeader = "Our Services";
-        H2.textContent = nameHeader;
-        MainContent.appendChild(H2);
-
-        let AdService = document.createElement("h3");
-        AdService.setAttribute("id", "AdService");
-        let AdParagraph = "Adonai's Top 3 Skills are: ";
-        AdService.textContent = AdParagraph;
-        MainContent.appendChild(AdService);
-
-        let AdList = document.createElement("ol");
-        AdList.setAttribute("id", "AdList");
-        AdList.innerHTML = '<li>Object-Oriented Programming</li>'
-            +'<li>UX Design</li><li>Full Stack Development</li>';
-        MainContent.appendChild(AdList);
-
-        let ImageDescriptions = document.createElement("p");
-        ImageDescriptions.setAttribute("id", "ImageDescriptions");
-        ImageDescriptions.innerHTML = "Designed a potential User Experience Flowchart&emsp;&emsp;"
-        + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
-        +"Designed a mock User Graphical Interface";
-        MainContent.appendChild(ImageDescriptions);
-
-        let AlexDescriptions = document.createElement("p");
-        AlexDescriptions.setAttribute("id", "AlexDescriptions");
-        AlexDescriptions.innerHTML = "Professionally Editing Videos&emsp;&emsp;"
-        + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
-        +"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Program in any language";
-        MainContent.append(AlexDescriptions);
-
-        let AlexService = document.createElement("h3");
-        AlexService.setAttribute("id", "AlexService");
-        let AlexParagraph = "Alex's Top 3 Skills are: ";
-        AlexService.textContent = AlexParagraph;
-        MainContent.appendChild(AlexService);
-
-        let AlexList = document.createElement("ol");
-        AlexList.setAttribute("id", "AlexList");
-        AlexList.innerHTML = '<li>Web Design</li>'
-        +'<li>HTML, PHP, CSS, Java, Python, C++</li><li>Video Editing</li>';
-        MainContent.appendChild(AlexList);
-        
-        // Insert Items at Specific location
-        let ServiceContent = document.getElementById("row1");
-        AdService.after(ServiceContent);        
-        AdList.after(ServiceContent);
-        let ServiceContent1 = document.getElementById("img5");
-        ServiceContent1.before(ImageDescriptions);
-
-        let AlexContent = document.getElementById("img5");
-        AlexContent.before(AlexService);
-        AlexContent.before(AlexList);
-        
-
-        // Add Human Resources to Navbar
-        AddHr();
-
-        // Add Bottom NavBar
-        AddNavBar();
     }
+
     function DisplayHomePage()
     {
-        // Add Human Resources to Navbar
-        AddHr();
-        // Add Bottom NavBar
-        AddNavBar();
+        console.log("Home Page");
 
-        // About Us button redirect
-        let AboutUsButton = document.getElementById("AboutUsButton");
-        console.log(AboutUsButton);
-        AboutUsButton.addEventListener("click", function()
+        $("#AboutUsButton").on("click", function()
         {
-            // Redirect to about.html
             location.href = "about.html";
         });
 
-        // Entry Point
-        let MainContent = document.getElementsByTagName("main")[0];
-
-        // Header with Homepage Title
-        let HomeHeader = document.createElement("h1");
-        HomeHeader.setAttribute("id", "HomeHeader");
-        let ATitle = "Adonai & Alex's Homepage";
-        HomeHeader.textContent = ATitle;
-        MainContent.appendChild(HomeHeader);
-        let Home = document.getElementById("home");
-        Home.before(HomeHeader);
-        document.getElementById("HomeHeader").style.textIndent = "275px";
-        
-        // Homepage Main Paragraph
-        let MainParagraph = document.createElement("p");
-        MainParagraph.setAttribute("id", "MainParagraph");
-        MainParagraph.setAttribute("class", "mt-3");
-        let FirstParagraphString = "Welcome to Our Homepage! Here you will learn more ";
-        let SecondParagraphString = `${FirstParagraphString} about Adonai & Alex!`;
-        MainParagraph.textContent = SecondParagraphString;
-        MainContent.appendChild(MainParagraph);
-        Home.before(MainParagraph);
+        $("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
+        //Article.innerHTML = ArticleParagraph;
+        $("body").append(`<article class="container">
+        <p id="ArticleParagraph" class="mt-3">This is the Article Paragraph</p>
+        </article>`);
     }
+
+    /**
+     * Adds a Contact Object to localStorage
+     *
+     * @param {string} fullName
+     * @param {string} contactNumber
+     * @param {string} emailAddress
+     */
+    function AddContact(fullName, contactNumber, emailAddress)
+    {
+        let contact = new core.Contact(fullName, contactNumber, emailAddress);
+        if(contact.serialize())
+        {
+            let key = contact.FullName.substring(0, 1) + Date.now();
+
+            localStorage.setItem(key, contact.serialize());
+        }
+    }
+
+       /**
+     * This method validates a field in the form and displays an error in the message area div element
+     *
+     * @param {string} fieldID
+     * @param {RegExp} regular_expression
+     * @param {string} error_message
+     */
+        function ValidateField(fieldID, regular_expression, error_message)
+        {
+            let messageArea = $("#messageArea").hide();
+        
+            $("#" + fieldID).on("blur", function()
+            {
+                let text_value = $(this).val();
+                if(!regular_expression.test(text_value))
+                {
+                    $(this).trigger("focus").trigger("select");
+                    messageArea.addClass("alert alert-danger").text(error_message).show();
+                }
+                else
+                {
+                    messageArea.removeAttr("class").hide();
+                }
+            });
+        }
+    
+        function ContactFormValidation()
+        {
+            ValidateField("fullName", /^([A-Z][a-z]{1,3}.?\s)?([A-Z][a-z]{1,})((\s|,|-)([A-Z][a-z]{1,}))*(\s|,|-)([A-Z][a-z]{1,})$/, "Please enter a valid Full Name. This must include at least a Capitalized First Name and a Capitalized Last Name.");
+            ValidateField("contactNumber", /^(\+\d{1,3}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/, "Please enter a valid Contact Number. Example: (416) 555-5555");
+            ValidateField("emailAddress", /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$/, "Please enter a valid Email Address.");
+        }
 
     function DisplayContactPage()
     {
         console.log("Contact Page");
-        // Add Human Resources to Navbar
-        AddNavBar();
-        // Add Human Resources to Navbar
-        AddHr();
+        ContactFormValidation();
 
         let sendButton = document.getElementById("sendButton");
         let subscribeCheckbox = document.getElementById("subscribeCheckbox");
 
         sendButton.addEventListener("click", function(event)
         {
-            //event.preventDefault(); // For Debugging
+
             if(subscribeCheckbox.checked)
             {
-                let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
+                let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
                 if(contact.serialize())
                 {
-                    let key = contact.FullName.substring(0,1) + Date.now();
+                    let key = contact.FullName.substring(0, 1) + Date.now();
+
                     localStorage.setItem(key, contact.serialize());
-                    setTimeout(window.location.href = "index.html", 1000);
                 }
             }
         });
@@ -292,80 +110,140 @@
 
     function DisplayContactListPage()
     {
-        console.log("Contact List Page");
+        console.log("Contact-List Page");
 
-        // Add Human Resources to Navbar
-        AddHr();
-
-        // Add Bottom NavBar
-        AddNavBar();
-
-        if(localStorage.length > 0) // Make sure not empty
+        if(localStorage.length > 0) // check if localStorage has something in it 
         {
             let contactList = document.getElementById("contactList");
+
             let data = "";
+
             let keys = Object.keys(localStorage);
+
             let index = 1;
 
-            // For each key in keys collection, loop
+            //for every key in the keys collection loop
             for(const key of keys)
             {
-                // Retrieve contact data from local storage
-                let contactData = localStorage.getItem(key);
+                let contactData = localStorage.getItem(key); // retrieve contact data from localStorage
 
-                // Create an empty contact object
-                let contact = new Contact();
+                let contact = new core.Contact(); // create an empty Contact Object
                 contact.deserialize(contactData);
 
                 data += `<tr>
-                <th scope ="row" class="text-center">${index}</th>
+                <th scope="row" class="text-center">${index}</th>
                 <td>${contact.FullName}</td>
                 <td>${contact.ContactNumber}</td>
                 <td>${contact.EmailAddress}</td>
-                <td></td>
-                <td></td>
+                <td class="text-center"><button value="${key}" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</button></td>
+                <td class="text-center"><button value="${key}" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</button></td>
                 </tr>
-                `;
+                `;               
                 index++;
             }
+
             contactList.innerHTML = data;
+
+            $("#addButton").on("click", () =>
+            {
+                location.href = "edit.html#add";
+            });
+
+            $("button.delete").on("click", function()
+            {
+                if(confirm("Are you sure?"))
+                {
+                    localStorage.removeItem($(this).val());
+                }
+                
+                location.href = "contact-list.html";
+            });
+
+            $("button.edit").on("click", function() 
+            {
+                location.href = "edit.html#" + $(this).val();
+            });
         }
     }
 
-    // Change Products to Projects
-    function ChangeProductLabel()
+    function DisplayEditPage()
     {
-        document.getElementById("projects").innerHTML = "<i class='fas fa-box'></i> Projects";                
+        console.log("Edit Page");
+
+        ContactFormValidation();
+
+        let page = location.hash.substring(1);
+
+        switch(page)
+        {
+            case "add":
+                {
+                    $("main>h1").text("Add Contact");
+
+                    $("#editButton").html(`<i class="fas fa-plus-circle fa-lg"></i> Add`);
+
+                    $("#editButton").on("click", (event) => 
+                    {
+                        event.preventDefault();
+                        // Add Contact
+                        AddContact(fullName.value, contactNumber.value, emailAddress.value);
+                        // Refresh the contact-list page
+                        location.href ="contact-list.html";
+                    });
+
+                    $("#cancelButton").on("click", () =>
+                    {
+                        location.href ="contact-list.html";
+                    });
+
+                }
+                break;
+            default:
+                {
+                    // get the contact info from localStorage
+                    let contact = new core.Contact();
+                    contact.deserialize(localStorage.getItem(page));
+
+                    // display the contact info in the edit form
+                    $("#fullName").val(contact.FullName);
+                    $("#contactNumber").val(contact.ContactNumber);
+                    $("#emailAddress").val(contact.EmailAddress);
+
+                    // when Edit is pressed - update the contact
+                    $("#editButton").on("click", (event)=>
+                    {
+                        event.preventDefault();
+
+                        // get any changes from the form
+                        contact.FullName = $("#fullName").val();
+                        contact.ContactNumber = $("#contactNumber").val();
+                        contact.EmailAddress = $("#emailAddress").val();
+
+                        // replace the item in localStorage
+                        localStorage.setItem(page, contact.serialize());
+
+                        // return to the contact-list
+                        location.href ="contact-list.html";
+                    });
+
+                    $("#cancelButton").on("click", () =>
+                    {
+                        location.href ="contact-list.html";
+                    });
+                    
+                }
+                break;
+        }
     }
 
-    // Add Human Resources link to top nav bar
-    function AddHr()
+    function DisplayLoginPage()
     {
-        // Entry point
-        let MainContent = document.getElementsByTagName("main")[0];
-        let HumanResources = document.createElement("li");
-        HumanResources.setAttribute("class", "nav-item");
-        HumanResources.innerHTML = '<a class="nav-link" href = "human-resources.html"><i class="fas fa-life-ring"></i> Human Resources';
-        MainContent.appendChild(HumanResources);
-        let HrLink = document.getElementById("contact-us");
-        HrLink.before(HumanResources);
+        console.log("Login Page");
     }
 
-    // Add Fixed Bottom Nav Bar
-    function AddNavBar()
+    function DisplayRegisterPage()
     {
-        // Entry point
-        let MainContent = document.getElementsByTagName("main")[0];
-        let navBar = document.createElement("nav");
-        navBar.setAttribute("class", "navbar fixed-bottom navbar-light bg-light");
-        let footer = '<div class="container-fluid"><a class="navbar-brand" href="#">&#169;Copyright 2022</a></div>';
-        navBar.innerHTML = footer;
-        MainContent.appendChild(navBar);
-    }
-
-    function redirects()
-    {
-        location.href = "index.html";
+        console.log("Register Page");
     }
 
     // Named Function
@@ -397,6 +275,18 @@
 
             case "Services":
                 DisplayServicesPage();
+                break;
+            
+            case "Edit":
+                DisplayEditPage();
+                break;
+            
+            case "Login":
+                DisplayLoginPage();
+                break;
+            
+            case "Register":
+                DisplayRegisterPage();
                 break;
         }     
     }

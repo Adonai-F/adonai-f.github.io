@@ -1,76 +1,51 @@
-.main-border{
-    margin-bottom: 65px;
+.input-group-addon:first-child
+{
+    border-right: 0;
 }
 
-
-img{
-    height: 400px;
-    width: 400px;
+.input-group-addon
+{
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    border: 1px solid darkgrey;
+    border-radius: 4xpx; 
 }
 
-.projectsImgs{
-    height: 200px;
-    width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+.input-group-addon .fa
+{
+    font-size: 18px;
 }
 
-.center{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.input-group .form-control
+{
+    position:relative;
+    z-index: 2;
+    float:left;
+    width: 100%;
+    margin-bottom: 0;
 }
 
-#left{
-    float: left;
+.input-group .form-control:last-child
+{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-#right{
-    float: right;
+.login
+{
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: lightgrey;
+    border-radius: .3rem;
 }
 
-.row{
-    display: flex;
-}
-
-.column{
-    flex: 10%;
-    padding: 10px;
-}
-
-.AdonaiParagraph{
-    display: flex;
-    padding-right: 700px;
-}
-
-.AlexParagraph {
-    display: flex;
-    padding-left: 700px;
-}
-
-.AlexResume {
-    display: flex;
-    padding-left: 700px;
-}
-
-.logo{
-    height: 100px;
-    width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 50px;
-    width: 50%;
-}
-
-.BG_Homepage{
-    background-image: url("/Images/sunset.jpg");
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+.login input
+{
+    background-color: white;
+    border-color: darkgrey;
+    border-radius: .4em;
+    width: 100%;
 }

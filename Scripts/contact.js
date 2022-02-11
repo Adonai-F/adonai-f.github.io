@@ -1,8 +1,6 @@
-class Contact
+(function (core){
+    class Contact
 {
-    // Instance Variables
-    
-
     // Public Properties (Getters and Setters)
     get FullName()
     {
@@ -45,6 +43,7 @@ class Contact
         this.EmailAddress = emailAddress;
     }
 
+
     // Public Methods
     serialize()
     {
@@ -75,3 +74,6 @@ class Contact
         return `Full Name: ${this.FullName}\n Contact Number: ${this.ContactNumber}\nEmail Address: ${this.EmailAddress}`;
     }
 }
+    core.Contact = Contact;
+})(core || (core = {}));
+
