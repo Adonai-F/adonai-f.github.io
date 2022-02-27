@@ -1,6 +1,6 @@
-<!--ICE 6
+<!--ICE 4
 Adonai Ford-Williams
-February 18th, 2022
+February 4th, 2022
 Durham College-->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,22 +16,51 @@ Durham College-->
 </head>
 <body>
     <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><i class="fas fa-spider"></i> WEBD6201</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="services.html"><i class="fas fa-people-carry"></i> Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="projects" class="nav-link" href="products.html"><i class="fas fa-box"></i> Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html"><i class="fas fa-question"></i> About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
 
 
 <!-- Main Content -->
 <main class="container" id="mainContent">
+  <div id="ErrorMessage"></div>
   <div class="row">
       <div class="offset-md-3 col-md-6 col-sm-12">
             <div class="login" id="contentArea">
                 <h1 class="display-4">Register</h1>
                 <form id="registerForm" novalidate>
+                  <div id="errorMessage"></div>
                   <p class="hint-text">Create your own account. It's free and only takes a minute.</p>
 
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-6">
-                        <input class="form-control" type="text" name="firstName" id="FirstName" placeholder="First Name" required>
+                        <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" required>
                       </div>
                       <div class="col-md-6">
                         <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
@@ -91,6 +120,7 @@ Durham College-->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="./Scripts/namespace.js"></script>
+    <script src="./Scripts/register.js"></script>
     <script src="./Scripts/contact.js"></script>
     <script src="./Scripts/app.js"></script>
 </body>
