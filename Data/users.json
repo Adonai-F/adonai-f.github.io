@@ -2,15 +2,15 @@
     "users":
     [
         {
-            "DisplayName": "Adonai Ford-Williams",
-            "EmailAddress": "adonai.fw@example.com",
-            "Username": "adonaifw",
+            "DisplayName": "John Smith",
+            "EmailAddress": "john.smith@example.com",
+            "Username": "johnsmith",
             "Password": "123456"
         },
         {
-            "DisplayName": "Kaitlyn Rose",
-            "EmailAddress": "kaitlyn.rose@example.com",
-            "Username": "kaitlynrose",
+            "DisplayName": "May Smith",
+            "EmailAddress": "may.smith@example.com",
+            "Username": "maysmith",
             "Password": "123456"
         },
         {

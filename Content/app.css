@@ -24,7 +24,6 @@
     position:relative;
     z-index: 2;
     float:left;
-    width: 100%;
     margin-bottom: 0;
 }
 
@@ -48,81 +47,4 @@
     border-color: darkgrey;
     border-radius: .4em;
     width: 100%;
-}
-
-.main-border{
-    margin-bottom: 65px;
-}
-
-
-img{
-    height: 400px;
-    width: 400px;
-}
-
-.projectsImgs{
-    height: 200px;
-    width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-
-.center{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-#left{
-    float: left;
-}
-
-#right{
-    float: right;
-}
-
-.row{
-    display: flex;
-}
-
-.column{
-    flex: 10%;
-    padding: 10px;
-}
-
-.AdonaiParagraph{
-    display: flex;
-    padding-right: 700px;
-}
-
-.AlexParagraph {
-    display: flex;
-    padding-left: 700px;
-}
-
-.AlexResume {
-    display: flex;
-    padding-left: 700px;
-}
-
-.logo{
-    height: 100px;
-    width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 50px;
-    width: 50%;
-}
-
-.BG_Homepage{
-    background-image: url("/Images/sunset.jpg");
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
 }
